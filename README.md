@@ -1,3 +1,49 @@
+#The vase and the finial
+### A conceptual, new-media-art website for 'The vase and the finial' painting
+
+## The concept
+
+In logical order, an artist creates a work in such a way that first
+make sketches and learn about the subject, then create the artwork.
+Now my concept was to reverse this process:
+
+- the oil painting was made first (2012)
+- then the computer-edited 2D version was  made (2021)
+
+During the process the artwork to become more perfect, more realistic.
+I was wondering how changes the end result,
+and what is changing in the creator.
+
+When I get to the end of the process I learned it perfectly
+where is the correct shadow and what is the exact shape. But it can't
+impress the original artwork because it was completed 9 years ago.
+
+The 2 images and this website where I present them together,
+is an interactive realization of a conceptual idea 
+what presenting the creating process.
+
+Separately examined the painting is a realistic still life.
+
+## The original
+
+In 2012, I painted this still life on 40x50 canvas with oil.
+My teacher was Csaba Flip. He is a Munkacsy award-winning painter and teacher.
+I created this painting in his studio.
+
+In the composition show a vase and a finial next to each other.
+The black vase is from my mother, and the roof decoration is made of copper by my carpenter father.
+
+## Why pure-css?
+
+I made version 2D with pure-css. There is only one reason for this:
+I am a developer, and it was a challenge for me. In Illustrator,
+I could have done it much faster, but it’s just would have been a sketch .... In this form, it is also valid as an independent artwork
+within the code-art genre.
+
+Some people use a program that converts an image to css, but that's not the real solution, 
+it's just a game, or a joke: "look how skillful I am?"All this program does is convert the image pixel by pixel. 
+Real pure-css creations consist of shapes like vector graphics and not pixels.
+
 ## Code art
 
 There are countless types of computer-generated artworks.
@@ -26,9 +72,13 @@ which would generate the creation of items. Each item exists on its own,
 independent of the other items, and its creation is the task of the artist.
 
 This is not to say only descriptive languages usable for it, scripting languages 
-usable too respecting the conventions of the branch of art
+usable too respecting the conventions of the branch of art.
 
 ### Some representatives of code art:
 
 - [Diana Smith (cyanharlow)](https://github.com/cyanharlow)
 - [Some of Rafaël Rozendaal's atrworks](https://www.newrafael.com/websites/)
+
+## About me
+
+You can read more about me on my [Github](https://github.com/C4RC0).

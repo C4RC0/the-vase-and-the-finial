@@ -1,0 +1,1986 @@
+:root {
+    --bg-gray: #e0e4e5;
+    --bg-brown: #ab8d75;
+    --vase-background: #393939;
+    --stalk-color: #b8a89a;
+    --cylindrical-head-color: #7d6256;
+    --shadow-background: #000000;
+    --shadow-opacity: 0.4;
+    --shadow-blur: 12px;
+    --finial-color: #c98d74;
+}
+
+.canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scale {
+    display: table;
+    transform: scale(1);
+    transform-origin: center;
+    width: auto;
+    height: auto;
+}
+
+.composition {
+    display: block;
+    width: 40cm;
+    height: 50cm;
+}
+
+.composition * {
+    position: absolute;
+}
+
+.group{
+    width: 100%;
+    height: 100%;
+}
+
+.bgGroup{
+    width: 100%;
+    height: 100%;
+}
+
+/*wall*/
+
+.wall {
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreen .wall {
+    width: 1000%;
+    height: 1000%;
+    transform: translate(-50%, -50%);
+}
+
+.wall .layer1 {
+    width: 100%;
+    height: 100%;
+}
+
+.wall .gray {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray);
+}
+
+/*table*/
+
+.table {
+    top: 74%;
+    left: 0;
+    width: 100%;
+    height: 26%;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
+}
+
+.fullscreen .table{
+    top: 76%;
+    left: 0;
+    width: 1000%;
+    height: 1000%;
+    transform: translate(-50%, 0) rotateZ(5deg);
+    clip-path: none;
+}
+
+.table .layer1 {
+    width: 100%;
+    height: 100%;
+}
+
+.table .brown {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-brown);
+}
+
+.objectGroup {
+    width: 100%;
+    height: 100%;
+}
+
+/*vase*/
+
+.vase {
+    top: 27.3%;
+    left: 4%;
+    width: 44%;
+    height: 71.6%;
+}
+
+.vase .defaultShape {
+    overflow: hidden;
+}
+
+.vase .defaultShapeInner {
+    width: 100%;
+    height: 100%;
+}
+
+/*vase shadow*/
+
+.vase .layer1 {
+    width: 100%;
+    height: 100%;
+    filter: blur(var(--shadow-blur));
+    opacity: var(--shadow-opacity);
+    left: 2%;
+}
+
+.vase .layer1 .concave{
+    box-shadow: 0 0 0 1000px var(--shadow-background);
+}
+
+.vase .layer1 .convex {
+    background-color: var(--shadow-background);
+}
+
+.vase .layer1 .tableShadow{
+    width: 100%;
+    height: 100%;
+    transform: scale(1) rotateX(34deg) rotateY(10deg) skew(-30deg, -4deg);
+    top: 10%;
+    left: 52%;
+    clip-path: polygon(0% 61%, 100% 63%, 100% 100%, 0% 100%);
+}
+
+.vase .layer1 .tableShadow .part1{
+    top: 74%;
+    left: 31%;
+    width: 41%;
+    height: 34%;
+    border-radius: 50%;
+    transform: perspective(390px) rotateX(77deg);
+}
+
+.vase .layer1 .tableShadow .part1 > div{}
+
+.vase .layer1 .tableShadow .part2 {
+    top: 78%;
+    left: 13%;
+    width: 74%;
+    height: 0;
+    border-top: 233px solid var(--shadow-background);
+    border-left: 90px solid transparent;
+    border-right: 77px solid transparent;
+    clip-path: polygon(100% 0, 90% 52%, 86% 100%, 0 100%, 0 0);
+}
+
+.vase .layer1 .tableShadow .part2 > div{}
+
+.vase .layer1 .tableShadow .part3 {
+    top: 51%;
+    left: -2%;
+    width: 108%;
+    height: 0;
+    border-top: 415px solid var(--shadow-background);
+    border-left: 90px solid transparent;
+    border-right: 77px solid transparent;
+    clip-path: polygon(94% 0, 93% 32%, 89% 60%, 80% 100%, 17% 100%, 6% 53%, 2% 0%);
+}
+
+.vase .layer1 .tableShadow .part3 > div{}
+
+.vase .layer1 .wallShadow{
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    left: 42%;
+    top: 5%;
+    transform: scaleX(1) rotateZ(10deg);
+    clip-path: polygon(0% 0%, 100% 0, 100% 62%, 0 67%);
+}
+
+.vase .layer1 .wallShadow .part1{
+    top: 10%;
+    left: 14%;
+    width: 37%;
+    height: 26%;
+    transform: rotate(4deg);
+}
+
+.vase .layer1 .wallShadow .part1 > div {
+    width: 100%;
+    height: 111%;
+    border-radius: 53%;
+    position: absolute;
+    right: 68%;
+}
+
+.vase .layer1 .wallShadow .part2{
+    top: 21%;
+    left: 5%;
+    width: 37%;
+    height: 18%;
+    transform: rotate(7deg);
+}
+
+.vase .layer1 .wallShadow .part2 > div {
+    width: 134%;
+    height: 252%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer1 .wallShadow .part3{
+    top: 10%;
+    left: 47%;
+    width: 37%;
+    height: 26%;
+    transform: scaleX(-1) rotate(2deg);
+}
+
+.vase .layer1 .wallShadow .part3 > div {
+    width: 100%;
+    height: 111%;
+    border-radius: 53%;
+    position: absolute;
+    right: 68%;
+}
+
+.vase .layer1 .wallShadow .part4{
+    top: 22.5%;
+    left: 57.5%;
+    width: 37%;
+    height: 18%;
+    transform: scaleX(-1) rotate(13deg);
+}
+
+.vase .layer1 .wallShadow .part4 > div {
+    width: 134%;
+    height: 252%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer1 .wallShadow .part5 {
+    top: 29%;
+    left: 0;
+    width: 100%;
+    height: 43%;
+    border-radius: 50%;
+}
+
+.vase .layer1 .wallShadow .part5 > div{}
+
+.vase .layer1 .wallShadow .part6 {
+    top: -11.5%;
+    left: 20%;
+    width: 60%;
+    height: 36%;
+    border-radius: 50%;
+    transform: perspective(469px) rotateX(77deg);
+}
+
+.vase .layer1 .wallShadow .part6 > div{}
+
+.vase .layer1 .wallShadow .part7 {
+    top: -15%;
+    left: 19%;
+    width: 62%;
+    height: 36%;
+    border-radius: 50%;
+    transform: perspective(522px) rotateX(77deg);
+}
+
+.vase .layer1 .wallShadow .part7 > div{}
+
+.vase .layer1 .wallShadow .part8 {
+    top: 6%;
+    left: 15%;
+    width: 4%;
+    height: 3%;
+}
+
+.vase .layer1 .wallShadow .part8 > div{}
+
+.vase .layer1 .wallShadow .part9 {
+    top: 6%;
+    left: 81%;
+    width: 4%;
+    height: 3%;
+}
+
+.vase .layer1 .wallShadow .part9 > div{}
+
+.vase .layer1 .wallShadow .part11 {
+    top: 51%;
+    left: -2%;
+    width: 108%;
+    height: 0;
+    border-top: 415px solid var(--shadow-background);
+    border-left: 90px solid transparent;
+    border-right: 77px solid transparent;
+    clip-path: polygon(94% 0, 93% 32%, 89% 60%, 80% 100%, 17% 100%, 6% 53%, 2% 0%);
+}
+
+.vase .layer1 .wallShadow .part11 > div{}
+
+/*vase background*/
+
+.vase .layer2 {
+    width: 100%;
+    height: 100%;
+}
+
+.vase .layer2 .concave{
+    box-shadow: 0 0 0 1000px var(--vase-background);
+}
+
+.vase .layer2 .convex {
+    background-color: var(--vase-background);
+}
+
+.vase .layer2 .part1{
+    top: 10%;
+    left: 14%;
+    width: 37%;
+    height: 26%;
+    transform: rotate(4deg);
+}
+
+.vase .layer2 .part1 > div {
+    width: 100%;
+    height: 111%;
+    border-radius: 53%;
+    position: absolute;
+    right: 68%;
+}
+
+.vase .layer2 .part2{
+    top: 21%;
+    left: 5%;
+    width: 37%;
+    height: 18%;
+    transform: rotate(7deg);
+}
+
+.vase .layer2 .part2 > div {
+    width: 134%;
+    height: 252%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer2 .part3{
+    top: 10%;
+    left: 47%;
+    width: 37%;
+    height: 26%;
+    transform: scaleX(-1) rotate(2deg);
+}
+
+.vase .layer2 .part3 > div {
+    width: 100%;
+    height: 111%;
+    border-radius: 53%;
+    position: absolute;
+    right: 68%;
+}
+
+.vase .layer2 .part4{
+    top: 22.5%;
+    left: 57.5%;
+    width: 37%;
+    height: 18%;
+    transform: scaleX(-1) rotate(13deg);
+}
+
+.vase .layer2 .part4 > div {
+    width: 134%;
+    height: 252%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer2 .part5 {
+    top: 29%;
+    left: 0;
+    width: 100%;
+    height: 43%;
+    border-radius: 50%;
+}
+
+.vase .layer2 .part5 > div{}
+
+.vase .layer2 .part6 {
+    top: 74%;
+    left: 31%;
+    width: 41%;
+    height: 34%;
+    border-radius: 50%;
+    transform: perspective(390px) rotateX(77deg);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0 0 0 / 14%);
+}
+
+.vase .layer2 .part6 > div{}
+
+.vase .layer2 .part7 {
+    top: -11.5%;
+    left: 20%;
+    width: 60%;
+    height: 36%;
+    border-radius: 50%;
+    transform: perspective(469px) rotateX(76deg);
+    box-shadow: 0 3px 0 rgb(0 0 0 / 8%);
+}
+
+.vase .layer2 .part7 > div{}
+
+.vase .layer2 .part8 {
+    top: -15%;
+    left: 19%;
+    width: 62%;
+    height: 36%;
+    border-radius: 50%;
+    transform: perspective(522px) rotateX(77deg);
+}
+
+.vase .layer2 .part8 > div{}
+
+.vase .layer2 .part9 {
+    top: 6%;
+    left: 15%;
+    width: 4%;
+    height: 3%;
+}
+
+.vase .layer2 .part9 > div{}
+
+.vase .layer2 .part10 {
+    top: 6%;
+    left: 81%;
+    width: 4%;
+    height: 3%;
+}
+
+.vase .layer2 .part10 > div{}
+
+.vase .layer2 .part11 {
+    top: 78%;
+    left: 13%;
+    width: 74%;
+    height: 0;
+    border-top: 233px solid var(--vase-background);
+    border-left: 90px solid transparent;
+    border-right: 77px solid transparent;
+    clip-path: polygon(100% 0, 90% 52%, 86% 100%, 0 100%, 0 0);
+}
+
+.vase .layer2 .part11 > div{}
+
+.vase .layer2 .part12{
+    top: 51%;
+    left: -2%;
+    width: 108%;
+    height: 0;
+    border-top: 415px solid var(--vase-background);
+    border-left: 90px solid transparent;
+    border-right: 77px solid transparent;
+    clip-path: polygon(94% 0, 93% 32%, 89% 60%, 80% 100%, 17% 100%, 6% 53%, 2% 0%);
+}
+
+.vase .layer2 .part12 > div{}
+
+.vase .layer3 {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.vase .layer3 .concave{
+    box-shadow: 0 0 0 1000px #000000;
+}
+
+.vase .layer3 .convex {
+    background-color: #000000;
+}
+
+.vase .layer3 .part1 {
+    top: -15%;
+    left: 19%;
+    width: 62%;
+    height: 36%;
+    border-radius: 50%;
+    transform: perspective(522px) rotateX(77deg);
+    border-style: double;
+    border-width: 8px;
+    border-color: #000000;
+}
+
+.vase .layer3 .part1 > div{
+    background: radial-gradient(ellipse 47% 151px at 50% 86%, black, black 67%, transparent 67%);
+}
+
+.vase .layer4 {
+    filter: blur(16px);
+    width: 100%;
+    height: 100%;
+    opacity: 0.17;
+}
+
+.vase .layer4 .concave{
+    box-shadow: 0 0 0 1000px #000000;
+}
+
+.vase .layer4 .convex {
+    background-color: #000000;
+}
+
+.vase .layer4 .part1{
+    top: 14%;
+    left: 42%;
+    width: 30%;
+    height: 0;
+    border-top: 150px solid #000000;
+    border-left: 0 solid transparent;
+    border-right: 44px solid transparent;
+    clip-path: polygon(6% 8%, 23% 10%, 27% 19%, 96% 8%, 89% 25%, 82% 50%, 75% 85%, 0% 100%);
+    transform: rotateZ(-6deg);
+}
+
+.vase .layer4 .part1 > div{}
+
+.vase .layer4 .part2{
+    top: 23.9%;
+    left: 38.8%;
+    width: 51%;
+    height: 19%;
+    transform: scaleX(-1) rotate(21deg);
+    clip-path: polygon(0% 0%, 88% 0%, 63% 109%, 0% 100%);
+}
+
+.vase .layer4 .part2 > div{
+    width: 134%;
+    height: 252%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer4 .part3{
+    top: 15%;
+    left: 23%;
+    width: 33%;
+    height: 16%;
+    transform: rotate(14deg);
+    clip-path: polygon(0% 4%, 20% 5%, 100% 0%, 100% 91%, 80% 95%, 0% 100%);
+}
+
+.vase .layer4 .part3 div {
+    width: 100%;
+    height: 135%;
+    border-radius: 50%;
+    position: absolute;
+    right: 64%;
+}
+
+.vase .layer4 .part4{
+    top: 35%;
+    left: 28%;
+    width: 55%;
+    height: 12%;
+    border-radius: 50%;
+    clip-path: polygon(55% 0%, 70% 100%, 100% 100%, 100% 0%);
+}
+
+.vase .layer4 .part4 > div {}
+
+.vase .layer4 .part5{
+    top: 12%;
+    left: 34%;
+    width: 34%;
+    height: 4%;
+    transform: rotateZ(0deg);
+    border-radius: 50%;
+    border-width: 6px;
+    clip-path: polygon(0% 78%, 100% 75%, 100% 120%, 0 120%);
+    border-style: solid;
+    border-color: #000000;
+}
+
+.vase .layer4 .part5 > div {}
+
+.vase .layer4 .part6{
+    top: 36%;
+    left: 38%;
+    width: 83%;
+    height: 50%;
+    border-radius: 50%;
+    transform: rotateY(48deg) rotateX(-6deg);
+}
+
+.vase .layer4 .part6 > div {
+    background: radial-gradient(ellipse 100% 554px at 63% 52%, #000000, #000000 20%, #00000000 90%);
+}
+
+.vase .layer4 .part7{
+    top: 69%;
+    left: 46%;
+    width: 61%;
+    height: 32%;
+    clip-path: polygon(0% 0%, 78% 0%, 46% 86%, 0% 99%);
+}
+
+.vase .layer4 .part7 > div {
+    width: 176%;
+    height: 219%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -53%;
+}
+
+.vase .layer5 {
+    filter: blur(11px);
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+}
+
+.vase .layer5 .concave{
+    box-shadow: 0 0 0 1000px #ffffff;
+}
+
+.vase .layer5 .convex {
+    background-color: #ffffff;
+}
+
+.vase .layer5 .part1{
+    top: 24%;
+    left: 12%;
+    width: 53%;
+    height: 0;
+    border-top: 227px solid #ffffff;
+    border-left: 135px solid transparent;
+    border-right: 80px solid transparent;
+    transform: rotateZ(190deg);
+}
+
+.vase .layer5 .part1 > div {}
+
+.vase .layer5 .part2{
+    top: 35%;
+    left: 0%;
+    width: 66%;
+    height: 36%;
+    border-radius: 50%;
+    transform: rotateZ(25deg);
+}
+
+.vase .layer5 .part2 > div {
+    background: radial-gradient(ellipse 100% 554px at 30% 30%, #ffffff, #ffffff 20%, #00000000 90%);
+}
+
+.vase .layer5 .part3{
+    top: -11%;
+    left: 36%;
+    width: 44%;
+    height: 20.5%;
+    border-radius: 50%;
+    transform: rotateZ(69deg);
+    clip-path: ellipse(57% 112% at 119% 128%);
+}
+
+.vase .layer5 .part3 > div {
+    background-color: #ffffff;
+}
+
+.vase .layer5 .part11 {
+    width: 82%;
+    height: 27%;
+    left: -6%;
+    top: 35%;
+    border-radius: 50%;
+    transform: rotateX(18deg) rotateY(-44deg);
+    display: none;
+}
+
+.vase .layer5 .part11 > div {
+    background-color: #ffffff;
+}
+
+.vase .layer5 .part12 {
+    top: 58%;
+    left: -19%;
+    width: 84%;
+    height: 43%;
+    z-index: 10;
+    transform: rotateY(180deg);
+    clip-path: polygon(0% 0%, 78% 0%, 46% 86%, 0% 99%);
+    display: none;
+}
+
+.vase .layer5 .part12 > div {
+    width: 132%;
+    height: 192%;
+    border-radius: 53%;
+    position: absolute;
+    right: 83%;
+    transform: rotate(46deg);
+    top: -35%;
+    box-shadow: 0 0 0 1000px #ffffff;
+}
+
+.vase .layer6 {
+    width: 100%;
+    height: 100%;
+}
+
+.vase .layer6 .concave{
+    box-shadow: 0 0 0 1000px #ffffff;
+}
+
+.vase .layer6 .convex {
+    background-color: #ffffff;
+}
+
+.vase .layer6 .part1 {
+    width: 47%;
+    height: 11%;
+    left: 13%;
+    top: 36%;
+    border-radius: 50%;
+    transform: rotateZ(104deg);
+    filter: blur(31px);
+    opacity: 0.2;
+}
+
+.vase .layer6 .part1 > div {
+    background: radial-gradient(ellipse 47% 151px at 50% 86%, white, white 67%, transparent 67%);
+}
+
+.vase .layer6 .part2 {
+    width: 10%;
+    height: 18%;
+    left: 35%;
+    top: 29%;
+    border-radius: 50%;
+    transform: rotateZ(7deg);
+    filter: blur(11px);
+    opacity: 0.4;
+}
+
+.vase .layer6 .part2 > div {
+    background: radial-gradient(ellipse 47% 151px at 50% 86%, white, white 67%, transparent 67%);
+}
+
+.vase .layer6 .part3 {
+    width: 9%;
+    height: 25%;
+    left: 33%;
+    top: 45%;
+    border-radius: 50%;
+    transform: rotateZ(-180deg);
+    filter: blur(17px);
+    opacity: 0.2;
+}
+
+.vase .layer6 .part3 > div {
+    background: radial-gradient(ellipse 53% 90px at 50% 84%, white, white 67%, transparent 67%);
+}
+
+.vase .layer6 .part4 {
+    width: 4%;
+    height: 25%;
+    left: 36%;
+    top: 37%;
+    border-radius: 50%;
+    transform: rotateZ(-173deg);
+    filter: blur(5px);
+    opacity: 0.8;
+}
+
+.vase .layer6 .part4 > div {
+    background: radial-gradient(ellipse 93% 143px at 27% 73%, white, white 4%, transparent 73%);
+}
+
+.vase .layer6 .part5 {
+    width: 16%;
+    height: 44%;
+    left: 36%;
+    top: 32%;
+    border-radius: 50%;
+    transform: rotateZ(-181deg);
+    filter: blur(10px);
+    opacity: 0.2;
+}
+
+.vase .layer6 .part5 > div {
+    background: radial-gradient(ellipse 93% 237px at 27% 73%, white, white 4%, transparent 73%);
+}
+
+.vase .layer6 .part6 {
+    width: 12%;
+    height: 23%;
+    left: 40%;
+    top: -3.5%;
+    border-radius: 50%;
+    transform: rotateZ(-88deg);
+    filter: blur(0px);
+    opacity: 0.1;
+}
+
+.vase .layer6 .part6 > div {
+    background: radial-gradient(ellipse 102% 267px at 86% 51%, transparent 72%, white 91%, white 75%, transparent 100%);
+}
+
+.vase .layer6 .part7 {
+    width: 10%;
+    height: 18%;
+    left: 37%;
+    top: -0.5%;
+    border-radius: 50%;
+    transform: rotateZ(-88deg);
+    filter: blur(0px);
+    opacity: 0.7;
+}
+
+.vase .layer6 .part7 > div {
+    background: radial-gradient(ellipse 105% 300px at 87% 60%, transparent 72%, white 91%, white 75%, transparent 100%);
+}
+
+.vase .layer7 {
+    width: 100%;
+    height: 100%;
+}
+
+.vase .layer7 .part1 {
+    top: 7%;
+    left: 0;
+    width: 97%;
+    height: 41%;
+    transform: rotateZ(0deg);
+    border-radius: 50%;
+    border-width: 14px;
+    clip-path: polygon(0% 78%, 100% 75%, 100% 100%, 0 100%);
+    border-style: solid;
+    border-color: #00000014;
+}
+
+.vase .layer7 .part1 > div {}
+
+.vase .layer7 .part2 {
+    top: 7.5%;
+    left: 0;
+    width: 97%;
+    height: 41%;
+    transform: rotateZ(0deg);
+    border-radius: 50%;
+    border-width: 2px;
+    clip-path: polygon(0% 78%, 100% 75%, 100% 100%, 0 100%);
+    border-style: solid;
+    border-color: #ffffff1a;
+}
+
+.vase .layer7 .part2 > div {}
+
+.vase .layer7 .part3 {
+    top: 43.5%;
+    left: 0;
+    width: 94%;
+    height: 41%;
+    filter: drop-shadow(0px 9px 0px rgba(255,255,255,0.3)) blur(2px);
+    opacity: 0.6;
+    transform: rotateX(
+        35deg) rotateY(
+        0deg) rotateZ(
+        -6deg) scale(1.1) skewX(
+        1deg);
+    overflow: visible;
+}
+
+.vase .layer7 .part3 > div {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #00000073;
+}
+
+.vase .layer7 .part3 > div:first-child {
+    width: 83%;
+    height: 48%;
+    top: 45%;
+    left: 15%;
+    border-radius: 0 50% 50% 50%;
+    transform: rotateX(
+        -68deg) rotateY(
+        9deg) rotateZ(
+        -74deg) skewX(
+        -51deg) skewY(
+        4deg);
+    clip-path: polygon(0% 0%, 33% 43%, 100% 100%, 0% 100%);
+}
+.vase .layer7 .part3 > div:nth-child(2) {
+    width: 16%;
+    height: 51%;
+    top: 26%;
+    left: 61%;
+    border-radius: 58% 41% 14% 0%;
+    transform: rotateZ(
+        7deg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 78%, 0% 45%);
+}
+.vase .layer7 .part3 > div:nth-child(3) {
+    width: 16%;
+    height: 10%;
+    left: 64%;
+    top: 30%;
+    transform: rotateZ(
+        -3deg) skewX(
+        -50deg);
+    clip-path: polygon(0% 11%, 100% 0%, 100% 100%, 137% 100%);
+}
+.vase .layer7 .part3 > div:nth-child(4) {
+    width: 58%;
+    height: 33%;
+    top: 46%;
+    left: 26%;
+    border-radius: 0 50% 50% 50%;
+    transform: rotateX(
+        -68deg) rotateY(
+        9deg) rotateZ(
+        -74deg) skewX(
+        -46deg) skewY(
+        6deg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.vase .layer7 .part3 > div:nth-child(5) {
+    width: 24%;
+    height: 3%;
+    top: 62%;
+    left: 17%;
+    transform: rotateZ(
+        38deg);
+    border-radius: 48% 0% 0% 24%;
+    clip-path: polygon(0% 0%, 90% 0%, 90% 100%, 0% 100%);
+}
+
+.vase .layer7 .part3 > div:nth-child(6) {
+    width: 24%;
+    height: 3%;
+    top: 65%;
+    left: 15%;
+    transform: rotateZ(
+        38deg);
+    border-radius: 48% 0% 0% 24%;
+    clip-path: polygon(0% 0%, 90% 0%, 90% 100%, 0% 100%);
+}
+
+.vase .layer7 .part3 > div:nth-child(7) {
+    width: 24%;
+    height: 3%;
+    top: 68%;
+    left: 14%;
+    transform: rotateZ(
+        38deg);
+    border-radius: 48% 0% 0% 24%;
+    clip-path: polygon(0% 0%, 90% 0%, 90% 100%, 0% 100%);
+    border-width: 2px;
+}
+
+.vase .layer7 .part3 > div:nth-child(8) {
+    width: 6%;
+    height: 7%;
+    top: 33%;
+    left: 69%;
+    border-radius: 50%;
+    border-width: 2px;
+}
+
+.vase .layer7 .part3 > div:nth-child(9) {
+    width: 2%;
+    height: 2%;
+    top: 35.5%;
+    left: 71%;
+    border-radius: 50%;
+    border-width: 3px;
+}
+
+.vase .layer7 .part3 > div:nth-child(10) {
+    width: 25%;
+    height: 27%;
+    top: 49%;
+    left: 42%;
+    border-radius: 0 50% 50% 50%;
+    transform: rotateX(
+        -69deg) rotateY(
+        16deg) rotateZ(
+        -40deg) skewX(
+        -17deg) skewY(
+        -18deg);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    border-width: 11px;
+    border-style: dotted;
+}
+
+.vase .layer7 .part3 > div:nth-child(11) {
+    width: 10%;
+    height: 9%;
+    top: 83%;
+    left: 56%;
+    transform: rotateZ(
+        66deg) skewX(
+        51deg);
+    clip-path: polygon(0% 86%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.vase .layer7 .part3 > div:nth-child(12) {
+    width: 10%;
+    height: 9%;
+    top: 85%;
+    left: 49%;
+    transform: rotateZ(
+        66deg) skewX(
+        51deg);
+    clip-path: polygon(0% 86%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.vase .layer7 .part3 > div:nth-child(13) {
+
+    width: 12%;
+    height: 27%;
+    top: 70%;
+    left: 29%;
+    transform: rotateZ(
+        27deg);
+    clip-path: polygon(0% 33%, 100% 45%, 100% 94%, 0% 86%);
+}
+
+.vase .layer7 .part3 > div:nth-child(14) {
+    width: 3%;
+    height: 6%;
+    top: 88.5%;
+    left: 24.5%;
+    transform: rotateZ(
+        31deg);
+    clip-path: polygon(0% 7%, 100% 7%, 100% 100%, 0% 100%);
+    border-radius: 0% 0% 50% 50%;
+}
+
+.vase .layer7 .part3 > div:nth-child(15) {
+    width: 3%;
+    height: 6%;
+    top: 90.5%;
+    left: 27%;
+    transform: rotateZ(
+        31deg);
+    clip-path: polygon(0% 7%, 100% 7%, 100% 100%, 0% 100%);
+    border-radius: 0% 0% 50% 50%;
+}
+
+.vase .layer7 .part3 > div:nth-child(16) {
+    width: 3%;
+    height: 6%;
+    top: 92.5%;
+    left: 29.5%;
+    transform: rotateZ(
+        31deg);
+    clip-path: polygon(0% 7%, 100% 7%, 100% 100%, 0% 100%);
+    border-radius: 0% 0% 50% 50%;
+}
+
+.vase .layer7 .part3 > div:nth-child(17) {
+    width: 3%;
+    height: 6%;
+    top: 94%;
+    left: 32%;
+    transform: rotateZ(
+        31deg);
+    clip-path: polygon(0% 7%, 100% 7%, 100% 100%, 0% 100%);
+    border-radius: 0% 0% 50% 50%
+}
+
+.vase .layer7 .part4 {
+    top: 42.5%;
+    left: -19%;
+    width: 94%;
+    height: 41%;
+    filter: drop-shadow(0px 9px 0px rgba(255,255,255,0.3)) blur(2px);
+    opacity: 0.6;
+    transform: rotateY(
+        43deg) rotateX(
+        -6deg) skewY(
+        5deg) scale(0.8);
+}
+
+.vase .layer7 .part4 > div {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #00000073;
+}
+
+.vase .layer7 .part4 > div:first-child {
+    width: 30%;
+    height: 34%;
+    border-radius: 50%;
+    top: 10%;
+    left: 8%;
+}
+
+.vase .layer7 .part4 > div:nth-child(2) {
+    width: 10%;
+    height: 12%;
+    border-radius: 50%;
+    top: 37%;
+    left: 16%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+}
+
+.vase .layer7 .part4 > div:nth-child(3) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 36%;
+    left: 10%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        45deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(4) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 27%;
+    left: 6%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        66deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(5) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 38%;
+    left: 26%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -59deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(6) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 31%;
+    left: 32%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -74deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(7) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 22%;
+    left: 33%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -89deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(8) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 13%;
+    left: 32%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -119deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(9) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 7%;
+    left: 26%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -150deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(10) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 5.5%;
+    left: 17%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -170deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(11) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 9.5%;
+    left: 9%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -210deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(12) {
+    width: 8%;
+    height: 10%;
+    border-radius: 50%;
+    top: 17.5%;
+    left: 5%;
+    clip-path: polygon(0% 34%, 100% 37%, 100% 100%, 0% 100%);
+    transform: rotateZ(
+        -257deg);
+}
+
+.vase .layer7 .part4 > div:nth-child(13) {
+    width: 21%;
+    height: 23%;
+    border-radius: 50%;
+    top: 15.5%;
+    left: 12.5%;
+    border-style: dotted;
+    border-width: 10px;
+}
+
+.vase .layer7 .part4 > div:nth-child(14) {
+    width: 10%;
+    height: 11%;
+    border-radius: 50%;
+    top: 21.5%;
+    left: 18%;
+}
+
+/*bulrush*/
+
+.bulrush {
+    top: 0;
+    left: 38%;
+    width: 22%;
+    height: 33.6%;
+}
+
+.bulrush .defaultShape {
+    overflow: hidden;
+}
+
+.bulrush .defaultShapeInner {
+    width: 100%;
+    height: 100%;
+}
+
+.bulrush .layer1 {
+    width: 100%;
+    height: 100%;
+    filter: blur(var(--shadow-blur));
+    opacity: var(--shadow-opacity);
+}
+
+.bulrush .layer1 .wallShadow {
+    width: 100%;
+    height: 100%;
+    left: 28%;
+    top: 11%;
+    opacity: 0.9;
+    clip-path: polygon(0 0, 250% 0, 100% 86%, 0% 100%);
+}
+
+.bulrush .layer1 .wallShadow .concave{
+    box-shadow: 0 0 0 1000px var(--shadow-background);
+}
+
+.bulrush .layer1 .wallShadow  .convex {
+    background-color: var(--shadow-background);
+}
+
+.bulrush .layer1 .wallShadow .part1 {
+    top: -11%;
+    left: 103%;
+    width: 100%;
+    height: 126%;
+    transform: scaleX(-1) rotate(-38deg);
+    clip-path: ellipse(78% 86% at -2% 59%)
+}
+
+.bulrush .layer1 .wallShadow .part1 > div {
+    width: 100%;
+    height: 138%;
+    border-radius: 56%;
+    right: 27%;
+    top: -11%;
+}
+
+.bulrush .layer1 .wallShadow .part2 {
+    top: 44%;
+    left: 103%;
+    width: 27%;
+    height: 24%;
+    border-bottom-left-radius: 64%;
+    border-bottom-right-radius: 40%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(38deg);
+}
+
+.bulrush .layer1 .wallShadow .part2 > div {}
+
+.bulrush .layer1 .wallShadow .part3 {
+    top: 9%;
+    left: 144%;
+    width: 27%;
+    height: 46%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(41deg);
+    clip-path: ellipse(76% 79% at 63% 54%);
+}
+
+.bulrush .layer1 .wallShadow .part3 > div {}
+
+.bulrush .layer1 .wallShadow .part4 {
+    top: 4px;
+    left: 186%;
+    width: 26%;
+    height: 20%;
+    border-top-left-radius: 81%;
+    border-top-right-radius: 40%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(47deg);
+}
+
+.bulrush .layer1 .wallShadow .part4 > div {}
+
+
+.bulrush .layer2 {
+    width: 100%;
+    height: 100%;
+}
+
+.bulrush .layer2 .stalk {
+    width: 100%;
+    height: 100%;
+}
+
+.bulrush .layer2 .stalk .concave{
+    box-shadow: 0 0 0 1000px var(--stalk-color);
+}
+
+.bulrush .layer2 .stalk  .convex {
+    background-color: var(--stalk-color);
+}
+
+.bulrush .layer2 .stalk .part1 {
+    top: -11%;
+    left: 15%;
+    width: 100%;
+    height: 112%;
+    transform: scaleX(-1) rotate(-25deg);
+    clip-path: ellipse(77% 108% at 0% 58%);
+}
+
+.bulrush .layer2 .stalk .part1 > div {
+    width: 100%;
+    height: 129%;
+    border-radius: 37%;
+    right: 27%;
+    top: -10%;
+}
+
+.bulrush .layer2 .cylindricalHead{
+    width: 100%;
+    height: 100%;
+    left: -3%;
+}
+
+.bulrush .layer2 .cylindricalHead .concave{
+    box-shadow: 0 0 0 1000px var(--cylindrical-head-color);
+}
+
+.bulrush .layer2 .cylindricalHead  .convex {
+    background-color: var(--cylindrical-head-color);
+}
+
+.bulrush .layer2 .cylindricalHead .part1 {
+    top: 47%;
+    left: 14%;
+    width: 27%;
+    height: 20%;
+    border-bottom-left-radius: 64%;
+    border-bottom-right-radius: 40%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(22deg);
+}
+
+.bulrush .layer2 .cylindricalHead .part1 > div {}
+
+.bulrush .layer2 .cylindricalHead .part2 {
+    top: 6%;
+    left: 40%;
+    width: 27%;
+    height: 46%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(27deg);
+    clip-path: ellipse(76% 79% at 63% 54%);
+}
+
+.bulrush .layer2 .cylindricalHead .part2 > div {}
+
+.bulrush .layer2 .cylindricalHead .part3 {
+    top: -36px;
+    left: 67%;
+    width: 26%;
+    height: 20%;
+    border-top-left-radius: 81%;
+    border-top-right-radius: 40%;
+    transform: rotateX(-14deg) rotateY(-5deg) rotateZ(31deg);
+}
+
+.bulrush .layer2 .cylindricalHead .part3 > div {}
+
+.bulrush .layer3 {
+    width: 100%;
+    height: 100%;
+}
+
+.bulrush .layer3 .cylindricalHead{
+    width: 100%;
+    height: 100%;
+    left: -3%;
+    filter: blur(16px);
+    opacity: 0.2;
+}
+
+.bulrush .layer3 .cylindricalHead .concave{
+    box-shadow: 0 0 0 1000px #000000;
+}
+
+.bulrush .layer3 .cylindricalHead  .convex {
+    background-color: #000000;
+}
+
+.bulrush .layer3 .cylindricalHead .part1 {
+    top: -8%;
+    left: 51%;
+    width: 12%;
+    height: 78%;
+    border-top-right-radius: 64%;
+    border-bottom-right-radius: 40%;
+    transform: rotateX(-19deg) rotateY(1deg) rotateZ(28deg);
+}
+
+.bulrush .layer3 .cylindricalHead .part1 > div {}
+
+.bulrush .layer4 {
+    width: 100%;
+    height: 100%;
+}
+
+.bulrush .layer4 .cylindricalHead{
+    width: 100%;
+    height: 100%;
+    left: -3%;
+}
+
+.bulrush .layer4 .cylindricalHead .concave{
+    box-shadow: 0 0 0 1000px #ffffff;
+}
+
+.bulrush .layer4 .cylindricalHead  .convex {
+    background-color: #ffffff;
+}
+
+.bulrush .layer4 .cylindricalHead .part1 {
+    top: -10%;
+    left: 45%;
+    width: 27%;
+    height: 72%;
+    transform: rotateX(-6deg) rotateY(6deg) rotateZ(28deg);
+    opacity: 0.2;
+    filter: blur(10px);
+}
+
+.bulrush .layer4 .cylindricalHead .part1 > div {
+    background: radial-gradient(ellipse 50% 305px at 28% 39%, white, transparent 91%, transparent 100%);
+}
+
+/*finial*/
+
+.finial {
+    top: 1.6%;
+    left: 41.5%;
+    width: 35%;
+    height: 96.6%;
+}
+
+.finial .defaultShape {
+    overflow: hidden;
+}
+
+.finial .defaultShapeInner {
+    width: 100%;
+    height: 100%;
+}
+
+.finial .pentagon {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.finial .pentagon > div:first-child {
+    position: relative;
+    box-sizing: content-box;
+    width: 108px;
+    border-width: 108px 36px 0;
+    border-style: solid;
+    border-color: var(--finial-color) transparent;
+    top: 70px;
+}
+
+.finial .pentagon > div:nth-child(2) {
+    width: 108px;
+    top: 0;
+    left: 0;
+    border-width: 0 90px 70px;
+    border-style: solid;
+    border-color: transparent transparent var(--finial-color);
+}
+
+/*finial shadow*/
+
+.finial .layer1 {
+    width: 100%;
+    height: 100%;
+    filter: blur(var(--shadow-blur));
+    opacity: var(--shadow-opacity);
+}
+
+.finial .layer1 .concave{
+    box-shadow: 0 0 0 1000px var(--shadow-background);
+}
+
+.finial .layer1 .convex {
+    background-color: var(--shadow-background);
+}
+
+.finial .layer1 .tableShadow{
+    width: 100%;
+    height: 100%;
+}
+
+.finial .layer1 .tableShadow .part1{
+    top: 66%;
+    left: 53.5%;
+    width: 49%;
+    height: 0;
+    border-top: 832px solid #000000;
+    border-left: 37px solid transparent;
+    border-right: 1px solid transparent;
+    transform: rotateX(112deg) rotateY(-3deg) rotateZ(-17deg);
+}
+
+.finial .layer1 .tableShadow .part1 > div{}
+
+.finial .layer1 .wallShadow{
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+.finial .layer1 .wallShadow .part1{
+    top: 6%;
+    left: 104%;
+    width: 42%;
+    height: 0;
+    border-top: 1404px solid var(--shadow-background);
+    border-left: 111px solid transparent;
+    border-right: 95px solid transparent;
+    transform: rotateX(199deg) rotateY(14deg) rotateZ(-9deg);
+}
+
+.finial .layer1 .wallShadow .part1 > div{}
+
+.finial .layer1 .wallShadow .part2{
+    top: 50%;
+    left: 67%;
+    width: 500px;
+    height: 500px;
+    transform: scale(1) rotateX(-38deg) rotateY(-12deg) rotateZ(5deg);
+    overflow: visible;
+}
+
+.finial .layer1 .wallShadow .part2 > div:first-child{
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 250px solid var(--shadow-background);
+    border-left: 123px solid transparent;
+    border-right: 140px solid transparent;
+    background-color: transparent;
+}
+
+.finial .layer1 .wallShadow .part2 > div:nth-child(2){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 250px solid var(--shadow-background);
+    border-left: 108px solid transparent;
+    border-right: 108px solid transparent;
+    background-color: transparent;
+    transform: rotate(180deg);
+}
+
+.finial .layer1 .wallShadow .part2 > div:nth-child(3){
+    top: -5%;
+    left: 22%;
+    width: 57%;
+    height: 0;
+    border-top: 25px solid var(--shadow-background);
+    border-left: 49px solid transparent;
+    border-right: 50px solid transparent;
+    background-color: transparent;
+    transform: rotate(180deg);
+}
+
+.finial .layer1 .wallShadow .part3{
+    top: 6%;
+    left: 110%;
+    width: 42%;
+    height: 0;
+    border-top: 941px solid var(--shadow-background);
+    border-left: 114px solid transparent;
+    border-right: 95px solid transparent;
+    transform: rotateX(199deg) rotateY(14deg) rotateZ(-9deg);
+}
+
+.finial .layer1 .wallShadow .part1 > div{}
+
+/*finial background color*/
+
+.finial .layer2 {
+    width: 100%;
+    height: 100%;
+}
+
+.finial .layer2 .concave{
+    box-shadow: 0 0 0 1000px var(--finial-color);
+}
+
+.finial .layer2 .convex {
+    background-color: var(--finial-color);
+}
+
+.finial .layer2 > div > div {}
+
+/*finial cone lower*/
+
+.finial .layer2 .coneLower{
+    width: 100%;
+    height: 100%;
+}
+
+.finial .layer2 .coneLower .part1{
+    top: 70%;
+    left: 32.5%;
+    width: 47%;
+    height: 0;
+    border-top: 494px solid var(--finial-color);
+    border-left: 42px solid transparent;
+    border-right: 22px solid transparent;
+    transform: rotate(180deg);
+}
+
+.finial .layer2 .coneLower .part1 > div {}
+
+.finial .layer2 .coneLower .part2{
+    top: 93%;
+    left: 32.5%;
+    width: 47%;
+    height: 7%;
+    border-radius: 100%;
+    border-bottom-style: solid;
+    border-bottom-color: #00000024;
+}
+
+.finial .layer2 .coneLower .part2 > div {}
+
+.finial .layer2 .coneLower .part3{
+    top: 69%;
+    left: 34.5%;
+    width: 26%;
+    height: 31%;
+    transform: rotateZ(3deg);
+    filter: blur(0px);
+    box-shadow: inset 40px 30px 40px 0 rgb(0 0 0 / 20%);
+    clip-path: ellipse(118% 61% at 51% 37%);
+}
+
+.finial .layer2 .coneLower .part3 > div {
+    background-color: transparent;
+}
+
+.finial .layer2 .coneLower .part4{
+    top: 67%;
+    left: 49.5%;
+    width: 26%;
+    height: 36%;
+    transform: rotateZ(-4.9deg);
+    box-shadow: inset -56px 19px 40px 17px rgb(0 0 0 / 20%);
+    clip-path: ellipse(118% 53.5% at 51% 37%);
+}
+
+.finial .layer2 .coneLower .part4 > div {
+    background-color: transparent;
+}
+
+/*finial dodecahedron*/
+
+.finial .layer2 .dodecahedron{
+    width: 100%;
+    height: 100%;
+    margin-left: 7px;
+    margin-top: -16px;
+    transform: scale(0.98);
+}
+
+.finial .layer2 .dodecahedron .part1{
+    top: 52.2%;
+    left: 49%;
+    width: 220px;
+    height: 200px;
+    transform: scale(1.9) rotateX(25deg) rotateY(17deg) rotateZ(-8deg);
+}
+
+.finial .layer2 .dodecahedron .part1 > div {
+    transform: rotate(36deg);
+}
+
+.finial .layer2 .dodecahedron .part2{
+    top: 43%;
+    left: 38%;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.85) rotateX(76deg) rotateY(2deg) rotateZ(-12deg);
+}
+
+.finial .layer2 .dodecahedron .part2 > div {
+    transform: rotate(0deg);
+}
+
+.finial .layer2 .dodecahedron .part3{
+    top: 51.2%;
+    left: 6.1%;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.7) rotateX(19deg) rotateY(-51deg) rotateZ(31deg);
+    filter: brightness(0.95);
+}
+
+.finial .layer2 .dodecahedron .part3 > div {
+    transform: rotate(36deg);
+}
+
+.finial .layer2 .dodecahedron .part4{
+    top: 49.8%;
+    left: 73.5%;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.69) rotateX(60deg) rotateY(61deg) rotateZ(-72deg);
+    filter: brightness(0.9);
+}
+
+.finial .layer2 .dodecahedron .part4 > div {
+    transform: rotate(36deg);
+}
+
+.finial .layer2 .dodecahedron .part5{
+    top: 61.1%;
+    left: 64.8%;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.66) rotateX(-57deg) rotateY(35deg) rotateZ(26deg);
+    filter: brightness(0.8);
+}
+
+.finial .layer2 .dodecahedron .part5 > div {
+    transform: rotate(0deg);
+}
+
+.finial .layer2 .dodecahedron .part6{
+    top: 61.8%;
+    left: 24%;
+    width: 200px;
+    height: 200px;
+    transform: scale(1.67) rotateX(-50deg) rotateY(-19deg) rotateZ(-11deg);
+    filter: brightness(0.9);
+}
+
+.finial .layer2 .dodecahedron .part6 > div {
+    transform: rotate(0deg);
+}
+
+/*finial cone upper*/
+
+.finial .layer2 .coneUpper{
+    width: 100%;
+    height: 100%;
+}
+
+.finial .layer2 .coneUpper .part1{
+    top: 0;
+    left: 36.5%;
+    width: 40%;
+    height: 0;
+    border-top: 863px solid var(--finial-color);
+    border-left: 59px solid transparent;
+    border-right: 138px solid transparent;
+    transform: rotate(180deg);
+}
+
+.finial .layer2 .coneUpper .part1 > div {}
+
+.finial .layer2 .coneUpper .part2{
+    top: 44.8%;
+    left: 36.5%;
+    width: 40%;
+    height: 4%;
+    border-radius: 100%;
+    border-bottom-style: solid;
+    border-bottom-color: #00000024;
+}
+
+.finial .layer2 .coneUpper .part2 > div {}
+
+.finial .layer2 .coneUpper .part3{
+    top: -0.9%;
+    left: 48.7%;
+    width: 13%;
+    height: 50.3%;
+    transform: rotateZ(9deg);
+    clip-path: ellipse(213% 61% at 51% 37%);
+    border-top-right-radius: 100%;
+}
+
+.finial .layer2 .coneUpper .part3 > div {
+    box-shadow: inset 40px 30px 40px 0 rgb(0 0 0 / 6%);
+    background-color: transparent;
+    clip-path: polygon(0% 0%, 100% 26%, 100% 100%, 0% 100%);
+}
+
+.finial .layer2 .coneUpper .part4{
+    top: -0.9%;
+    left: 50%;
+    width: 22%;
+    height: 55%;
+    transform: rotateZ(-3.9deg);
+    clip-path: ellipse(175% 52.5% at 51% 37%);
+    border-top-left-radius: 100%;
+}
+
+.finial .layer2 .coneUpper .part4 > div {
+    box-shadow: inset -54px 0 39px 26px rgb(0 0 0 / 13%);
+    background-color: transparent;
+    clip-path: polygon(0% 38%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/*finial lights*/
+
+.finial .layer3 {
+    width: 100%;
+    height: 100%;
+}
+
+.finial .layer3 .concave{
+    box-shadow: 0 0 0 1000px #ffffff;
+}
+
+.finial .layer3 .convex {
+    background-color: #ffffff
+}
+
+.finial .layer3 > div > div {}
+
+/*finial dodecahedron*/
+
+.finial .layer3 .dodecahedron{
+    width: 100%;
+    height: 100%;
+    margin-left: 7px;
+    margin-top: -16px;
+    transform: scale(0.98);
+}
+
+.finial .layer3 .dodecahedron .part1{
+    top: 55.2%;
+    left: 39%;
+    width: 220px;
+    height: 205px;
+    transform: scale(1) rotateX(49deg) rotateY(18deg) rotateZ(-57deg);
+    opacity: 0.1;
+    filter: blur(4px);
+}
+
+.finial .layer3 .dodecahedron .part1 > div {
+    background: radial-gradient(ellipse 97% 160px at 18% 82%, white, transparent 75%, transparent 100%);
+}
+
+.finial .layer3 .dodecahedron .part2{
+    top: 51.2%;
+    left: -2%;
+    width: 220px;
+    height: 205px;
+    transform: scale(1) rotateX(
+        13deg
+    ) rotateY(
+        39deg
+    ) rotateZ(
+        -27deg
+    );
+    opacity: 0.1;
+    filter: blur(4px);
+
+}
+
+.finial .layer3 .dodecahedron .part2 > div {
+    background: radial-gradient(ellipse 81% 115px at 34% 91%, white, transparent 91%, transparent 100%);
+}

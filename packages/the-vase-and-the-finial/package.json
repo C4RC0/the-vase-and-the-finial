@@ -1,0 +1,40 @@
+{
+    "name": "the-vase-and-the-finial",
+    "description": "A conceptual, new-media-art website for 'The vase and the finial' painting",
+    "license": "MIT",
+    "dependencies": {
+        "wapplr": "^1.0.0",
+        "wapplr-pwa": "^1.0.0",
+        "wapplr-react": "^1.0.0",
+        "clsx": "^1.1.1",
+
+        "@material-ui/core": "next",
+        "@material-ui/icons": "next",
+        "@material-ui/styles": "next",
+        "@emotion/react": "^11.4.0",
+        "@emotion/styled": "^11.3.0"
+    },
+    "devDependencies": {
+        "wapplr-cli": "^1.0.0"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "browserslist": [
+        ">1%",
+        "last 4 versions",
+        "Firefox ESR",
+        "not ie < 9"
+    ],
+    "scripts": {
+        "the-vase-and-the-finial start": "wapplr-cli start",
+        "the-vase-and-the-finial build": "wapplr-cli build",
+        "the-vase-and-the-finial clean": "wapplr-cli clean"
+    },
+    "version": "1.0.0",
+    "files": [
+        "dist/*"
+    ],
+    "main": "dist/server",
+    "browser": "dist/client"
+}

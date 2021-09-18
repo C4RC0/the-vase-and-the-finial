@@ -1,0 +1,108 @@
+:root {
+    --bg-gray: #e0e4e5;
+    --bg-brown: #ab8d75;
+    --vase-background: #393939;
+    --stalk-color: #b8a89a;
+    --cylindrical-head-color: #7d6256;
+    --finial-color: #c98d74;
+}
+
+.concept{
+    width: 100%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+
+.title{
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.vase {
+    color: var(--vase-background);
+}
+
+.and {
+    color: var(--cylindrical-head-color);
+}
+
+.finialColor {
+    color: var(--finial-color);
+}
+
+.subtitle {
+    font-size: 24px;
+}
+
+.section{
+    padding: 0 16px 0 16px;
+    margin: 16px 0 16px 0;
+}
+
+.sectionTitle{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.sectionContent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sectionContent .column > div {
+    margin-bottom: 16px;
+}
+
+.column {
+    width: 100%;
+}
+
+.grayBgForPhoto {
+    background-color: #d3d7d8;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.howWasItMade {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media (max-width: 640px) {
+
+    .concept{
+        padding: 0;
+    }
+
+    .title{
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .sectionTitle{
+        font-size: 18px;
+    }
+
+    .photo {
+        max-width: 100%;
+    }
+
+}

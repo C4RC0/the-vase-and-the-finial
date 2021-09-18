@@ -7,14 +7,14 @@
     },
     "private": true,
     "scripts": {
-        "start": "wapplr-cli start artworks/first",
-        "build": "wapplr-cli build artworks/first"
+        "start": "wapplr-cli start packages/the-vase-and-the-finial",
+        "build": "wapplr-cli build packages/the-vase-and-the-finial"
     },
     "workspaces": [
-        "artworks/*"
+        "packages/*"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/C4RC0/code-art.git"
+        "url": "https://github.com/C4RC0/the-vase-and-the-finial.git"
     }
 }
