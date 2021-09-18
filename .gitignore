@@ -3,6 +3,8 @@
 node_modules/
 dist
 run
+!packages/the-vase-and-the-finial/run/public/assets/icon_192x192.png
+!packages/the-vase-and-the-finial/run/public/assets/icon_512x512.png
 wapplr.json
 .DS_Store
 *.tgz
