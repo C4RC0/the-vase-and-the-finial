@@ -1,4 +1,4 @@
-#The vase and the finial
+# The vase and the finial
 ### A conceptual, new-media-art website for 'The vase and the finial' painting
 
 ## The concept
