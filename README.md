@@ -20,7 +20,7 @@ where is the correct shadow and what is the exact shape. But it can't
 impress the original artwork because it was completed 9 years ago.
 
 The 2 images and this website where I present them together,
-is an interactive realization of a conceptual idea 
+is an interactive realization of a conceptual idea
 what presenting the creating process.
 
 Separately examined the painting is a realistic still life.
@@ -34,6 +34,8 @@ I created this painting in his studio.
 In the composition show a vase and a finial next to each other.
 The black vase is from my mother, and the roof decoration is made of copper by my carpenter father.
 
+![The original](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/src/common/components/Concept/photo.jpg)
+
 ## Why pure-css?
 
 I made version 2D with pure-css. There is only one reason for this:
@@ -41,9 +43,11 @@ I am a developer, and it was a challenge for me. In Illustrator,
 I could have done it much faster, but it’s just would have been a sketch .... In this form, it is also valid as an independent artwork
 within the code-art genre.
 
-Some people use a program that converts an image to css, but that's not the real solution, 
-it's just a game, or a joke: "look how skillful I am?"All this program does is convert the image pixel by pixel. 
+Some people use a program that converts an image to css, but that's not the real solution,
+it's just a game, or a joke: "look how skillful I am?"All this program does is convert the image pixel by pixel.
 Real pure-css creations consist of shapes like vector graphics and not pixels.
+
+![How was it made](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/src/common/components/Concept/how-was-it-made.jpg)
 
 ## Code art
 
@@ -63,8 +67,8 @@ In code art, the expectation is that the items are completely independent of eac
 so inheritance of the objects should be used as little as possible.
 
 Obviously, this also depends on the specifics of the language used. Eg some the pure css
-artworks there are approaches fit into the code art category. 
-They do not strive to creating generations or visualize the program code objects in a generalized way, 
+artworks there are approaches fit into the code art category.
+They do not strive to creating generations or visualize the program code objects in a generalized way,
 but use the code as a tool for creating a full-fledged graphics.
 
 Overall, code art contrasts itself with generative art
@@ -72,7 +76,7 @@ and uses the code as a tool. There are no programmed processes in it
 which would generate the creation of items. Each item exists on its own,
 independent of the other items, and its creation is the task of the artist.
 
-This is not to say only descriptive languages usable for it, scripting languages 
+This is not to say only descriptive languages usable for it, scripting languages
 usable too respecting the conventions of the branch of art.
 
 ### Some representatives of code art:
