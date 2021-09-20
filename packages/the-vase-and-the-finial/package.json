@@ -7,7 +7,6 @@
         "wapplr-pwa": "^1.0.0",
         "wapplr-react": "^1.0.0",
         "clsx": "^1.1.1",
-
         "@material-ui/core": "next",
         "@material-ui/icons": "next",
         "@material-ui/styles": "next",

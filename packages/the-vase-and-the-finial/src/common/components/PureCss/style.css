@@ -1399,6 +1399,7 @@
 .bulrush .layer2 .stalk {
     width: 100%;
     height: 100%;
+    clip-path: polygon(-50% -50%, 150% -50%, 150% 150%, 4% 96%, -7% 100%);
 }
 
 .bulrush .layer2 .stalk .concave{
@@ -1411,10 +1412,11 @@
 
 .bulrush .layer2 .stalk .part1 {
     top: -11%;
-    left: 15%;
+    left: 6%;
     width: 100%;
-    height: 112%;
-    transform: scaleX(-1) rotate(-25deg);
+    height: 132%;
+    transform: scaleX(-1) rotate(
+        -24deg);
     clip-path: ellipse(77% 108% at 0% 58%);
 }
 

@@ -6,6 +6,9 @@ import setContents from "../common/setContents";
 
 import {getConfig as getCommonConfig} from "../common/config";
 import favicon from "./images/icon_192x192.png";
+import fs from "fs";
+import path from "path";
+import crypto from "crypto";
 
 export function getConfig(p = {}) {
 
@@ -15,11 +18,53 @@ export function getConfig(p = {}) {
     const commonConfig = getCommonConfig(p).config;
 
     const common = {...commonConfig.common};
+    const globals = {...commonConfig.globals};
 
     const server = {
         ...serverConfig,
         icon: favicon,
+        database: {
+            mongoConnectionString: "mongodb://localhost/thevaseandthefinial",
+        }
     };
+
+    const dirname = globals.ROOT || __dirname;
+    const credentialsFolder = "secure/";
+
+    if (
+        !globals.DEV &&
+        fs.existsSync(path.resolve(dirname, credentialsFolder, "thevaseandthefinial.com.key")) &&
+        fs.existsSync(path.resolve(dirname, credentialsFolder, "thevaseandthefinial.com.crt"))
+    ){
+        server.credentials = {
+            key: fs.readFileSync(path.resolve(dirname, credentialsFolder, "thevaseandthefinial.com.key"), "utf8"),
+            cert: fs.readFileSync(path.resolve(dirname, credentialsFolder, "thevaseandthefinial.com.crt"), "utf8"),
+        }
+    }
+
+    let secret = null;
+
+    try {
+        if (fs.existsSync(path.resolve(dirname, credentialsFolder, "secret.json"))){
+            secret = JSON.parse(fs.readFileSync(path.resolve(dirname, credentialsFolder, "secret.json"), "utf8"));
+        } else {
+            const newSecretJson = {
+                masterCode: Math.random().toString(36).substr(2, 8),
+                cookieSecret: crypto.randomBytes(256).toString('hex'),
+                adminPassword: Math.random().toString(36).substr(2, 8)
+            };
+            fs.writeFileSync(path.resolve(dirname, credentialsFolder, "secret.json"), JSON.stringify(newSecretJson, null, "    "));
+            secret = JSON.parse(fs.readFileSync(path.resolve(dirname, credentialsFolder, "secret.json"), "utf8"));
+        }
+    } catch (e) {
+        console.log(e)
+    }
+
+    if (secret){
+        Object.keys(secret).forEach(function (key) {
+            server[key] = secret[key];
+        });
+    }
 
     return {
         config: {
