@@ -149,6 +149,7 @@
     filter: blur(var(--shadow-blur));
     opacity: var(--shadow-opacity);
     left: 2%;
+    z-index: 101;
 }
 
 .vase .layer1 .concave{
@@ -351,6 +352,7 @@
 .vase .layer2 {
     width: 100%;
     height: 100%;
+    z-index: 102;
 }
 
 .vase .layer2 .concave{
@@ -524,6 +526,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.1;
+    z-index: 103;
 }
 
 .vase .layer3 .concave{
@@ -555,6 +558,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.17;
+    z-index: 104;
 }
 
 .vase .layer4 .concave{
@@ -677,6 +681,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.05;
+    z-index: 105;
 }
 
 .vase .layer5 .concave{
@@ -766,6 +771,7 @@
 .vase .layer6 {
     width: 100%;
     height: 100%;
+    z-index: 106;
 }
 
 .vase .layer6 .concave{
@@ -884,6 +890,7 @@
 .vase .layer7 {
     width: 100%;
     height: 100%;
+    z-index: 107;
 }
 
 .vase .layer7 .part1 {
@@ -1319,6 +1326,7 @@
     height: 100%;
     filter: blur(var(--shadow-blur));
     opacity: var(--shadow-opacity);
+    z-index: 201;
 }
 
 .bulrush .layer1 .wallShadow {
@@ -1394,6 +1402,7 @@
 .bulrush .layer2 {
     width: 100%;
     height: 100%;
+    z-index: 202;
 }
 
 .bulrush .layer2 .stalk {
@@ -1480,6 +1489,7 @@
 .bulrush .layer3 {
     width: 100%;
     height: 100%;
+    z-index: 203;
 }
 
 .bulrush .layer3 .cylindricalHead{
@@ -1513,6 +1523,7 @@
 .bulrush .layer4 {
     width: 100%;
     height: 100%;
+    z-index: 204;
 }
 
 .bulrush .layer4 .cylindricalHead{
@@ -1593,6 +1604,7 @@
     height: 100%;
     filter: blur(var(--shadow-blur));
     opacity: var(--shadow-opacity);
+    z-index: 301;
 }
 
 .finial .layer1 .concave{
@@ -1702,6 +1714,7 @@
 .finial .layer2 {
     width: 100%;
     height: 100%;
+    z-index: 302;
 }
 
 .finial .layer2 .concave{
@@ -1930,6 +1943,7 @@
 .finial .layer3 {
     width: 100%;
     height: 100%;
+    z-index: 303;
 }
 
 .finial .layer3 .concave{
