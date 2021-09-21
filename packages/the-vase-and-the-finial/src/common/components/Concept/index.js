@@ -1,12 +1,20 @@
-import React, {useContext, useState, useEffect} from "react";
+import React, {useContext} from "react";
 import {WappContext} from "wapplr-react/dist/common/Wapp";
 
 import style from "./style.css";
 import photo from "./photo.jpg";
 import howWasItMade from "./how-was-it-made.jpg";
+
+import preview1 from "./preview-1920x1080.jpg";
+import preview2 from "./preview-style1-1920x1080.jpg";
+import preview3 from "./preview-style2-1920x1080.jpg";
+import preview4 from "./preview-style3-1920x1080.jpg";
+import preview5 from "./preview-style4-1920x1080.jpg";
+import preview6 from "./preview-style5-1920x1080.jpg";
+
 import clsx from "clsx";
 
-export default function Concept(props) {
+export default function Concept() {
 
     const context = useContext(WappContext);
     const {wapp} = context;
@@ -88,6 +96,21 @@ export default function Concept(props) {
                 <div className={style.sectionContent}>
                     <div className={style.column}>
                         <div><span>{"You can read more about me on my "}</span><span><a href={"https://github.com/C4RC0"} target={"_blank"}>{"Github"}</a></span></div>
+                    </div>
+                </div>
+            </div>
+            <div className={style.section}>
+                <div className={style.sectionTitle}>{"Previews"}</div>
+                <div className={style.sectionContent}>
+                    <div className={style.column}>
+                        <div className={clsx(style.column, style.grayBgForPhoto)}>
+                            <img className={style.previews} src={preview1}/>
+                            <img className={style.previews} src={preview2}/>
+                            <img className={style.previews} src={preview3}/>
+                            <img className={style.previews} src={preview4}/>
+                            <img className={style.previews} src={preview5}/>
+                            <img className={style.previews} src={preview6}/>
+                        </div>
                     </div>
                 </div>
             </div>
