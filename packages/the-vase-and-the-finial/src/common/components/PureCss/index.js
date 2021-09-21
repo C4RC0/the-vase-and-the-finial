@@ -32,6 +32,25 @@ export default function PureCss(props) {
 
     const [scale, setScale] = useState(getScale());
 
+    const customStyle = useRef();
+
+    if (!customStyle.current) {
+        customStyle.current = {};
+        customStyle.current.styles = ["", "style1", "style2", "style3", "style4", "style5"];
+        customStyle.current.i = 0;
+        customStyle.current.className = customStyle.current.styles[customStyle.current.i];
+    }
+
+    const changeStyle = function () {
+        customStyle.current.i = customStyle.current.styles[customStyle.current.i + 1] ? customStyle.current.i + 1 : 0;
+        customStyle.current.className = customStyle.current.styles[customStyle.current.i];
+        container.current.className = clsx(
+            style.canvas,
+            {[style[customStyle.current.className]] : customStyle.current.className},
+            {[style.fullscreen] : fullscreen}
+        );
+    }
+
     useEffect(function didMount(){
 
         function onResize() {
@@ -69,7 +88,16 @@ export default function PureCss(props) {
     }, []);
 
     return (
-        <div className={clsx(style.canvas, {[style.fullscreen] : fullscreen})} ref={container}>
+        <div
+            className={
+                clsx(
+                    style.canvas,
+                    {[style[customStyle.current.className]] : customStyle.current.className},
+                    {[style.fullscreen] : fullscreen}
+                )}
+            ref={container}
+            onClick={changeStyle}
+        >
             <div className={style.bg} />
             <div className={style.center}>
                 <div className={style.scale} ref={scaleRef} style={{transform: "scale("+scale+")"}}>
@@ -79,11 +107,13 @@ export default function PureCss(props) {
                             <div className={style.wall}>
                                 <div className={style.layer1}>
                                     <div className={style.gray} />
+                                    <div className={style.grayEffect} />
                                 </div>
                             </div>
                             <div className={style.table} >
                                 <div className={style.layer1}>
                                     <div className={style.brown} />
+                                    <div className={style.brownEffect} />
                                 </div>
                             </div>
                         </div>

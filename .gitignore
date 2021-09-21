@@ -5,6 +5,12 @@ dist
 run
 !packages/the-vase-and-the-finial/run/public/assets/icon_192x192.png
 !packages/the-vase-and-the-finial/run/public/assets/icon_512x512.png
+!packages/the-vase-and-the-finial/run/public/assets/preview-1920x1080.jpg
+!packages/the-vase-and-the-finial/run/public/assets/preview-style1-1920x1080.jpg
+!packages/the-vase-and-the-finial/run/public/assets/preview-style2-1920x1080.jpg
+!packages/the-vase-and-the-finial/run/public/assets/preview-style3-1920x1080.jpg
+!packages/the-vase-and-the-finial/run/public/assets/preview-style4-1920x1080.jpg
+!packages/the-vase-and-the-finial/run/public/assets/preview-style5-1920x1080.jpg
 wapplr.json
 .DS_Store
 *.tgz

@@ -1,4 +1,4 @@
-:root {
+.canvas {
     --bg-gray: #e0e4e5;
     --bg-brown: #ab8d75;
     --vase-background: #393939;
@@ -10,12 +10,76 @@
     --finial-color: #c98d74;
 }
 
+.canvas.style5 {
+    --bg-gray: #3d4143;
+    --bg-brown: #c98d74;
+    --vase-background: #322f2f;
+    --stalk-color: #686868;
+    --cylindrical-head-color: #b8f80e;
+    --shadow-background: #171819;
+    --shadow-opacity: 0.2;
+    --shadow-blur: 6px;
+    --finial-color: #9e9e9e;
+}
+
+.canvas.style2 {
+    --bg-gray: rgb(245 125 81);
+    --bg-brown: rgb(226 119 79);
+    --vase-background: #37170c;
+    --stalk-color: #484639;
+    --cylindrical-head-color: #a54522;
+    --shadow-background: rgb(39 43 43);
+    --shadow-opacity: 0.9;
+    --shadow-blur: 12px;
+    --finial-color: rgb(241 107 58);
+}
+
+.canvas.style3 {
+    --bg-gray: #ffffff;
+    --bg-brown: #e0dfdf;
+    --vase-background: #1e1e1e;
+    --stalk-color: #ffffff;
+    --cylindrical-head-color: #0e0e0e;
+    --shadow-background: #070707;
+    --shadow-opacity: 0.9;
+    --shadow-blur: 3px;
+    --finial-color: #e4e4e4;
+}
+
+.canvas.style4 {
+    --bg-gray: #879aab;
+    --bg-brown: #c18e87;
+    --vase-background: #016889;
+    --stalk-color: #a88f0f;
+    --cylindrical-head-color: #6c4d49;
+    --shadow-background: #000000;
+    --shadow-opacity: 0.4;
+    --shadow-blur: 12px;
+    --finial-color: #e73f34;
+}
+
+.canvas.style1 {
+    --bg-gray: #f4bdb6;
+    --bg-brown: #c18e87;
+    --vase-background: #26211b;
+    --stalk-color: #9c675f;
+    --cylindrical-head-color: #675746;
+    --shadow-background: #000000;
+    --shadow-opacity: 0.8;
+    --shadow-blur: 12px;
+    --finial-color: #685847;
+}
+
 .canvas {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+}
+
+.canvas * {
+    transition: all 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 }
 
 .bg {
@@ -1625,7 +1689,7 @@
     left: 53.5%;
     width: 49%;
     height: 0;
-    border-top: 832px solid #000000;
+    border-top: 832px solid var(--shadow-background);
     border-left: 37px solid transparent;
     border-right: 1px solid transparent;
     transform: rotateX(112deg) rotateY(-3deg) rotateZ(-17deg);

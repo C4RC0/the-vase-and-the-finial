@@ -81,6 +81,7 @@ export default function App(props) {
                     effect={(p)=>{template.actions = p?.actions}}
                     transparentAppBar={pureCss}
                     pageContentNoPadding={pureCss}
+                    disableFooter={pureCss}
                     Logo={null}
                 >
                     {

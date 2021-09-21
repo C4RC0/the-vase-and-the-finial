@@ -41,6 +41,7 @@ function Template(props) {
         breakPoint = 960,
         transparentAppBar = false,
         pageContentNoPadding = false,
+        disableFooter = false,
 
         /*content*/
         title = "",
@@ -426,25 +427,29 @@ function Template(props) {
                             {children}
                         </div>
                     </div>
-                    <footer className={style.footer}>
-                        <div className={style.footerOneColumn}>
-                            {FooterLogo ?
-                                <div className={style.footerLogo}>
-                                    <FooterLogo />
+                    {(!disableFooter) ?
+                        <footer className={style.footer}>
+                            <div className={style.footerOneColumn}>
+                                {FooterLogo ?
+                                    <div className={style.footerLogo}>
+                                        <FooterLogo/>
+                                    </div>
+                                    :
+                                    null
+                                }
+                                <div className={style.copyright}>
+                                    {copyright}
                                 </div>
-                                :
-                                null
-                            }
-                            <div className={style.copyright}>
-                                {copyright}
+                                {(wapp.globals.DEV) ?
+                                    <div className={style.log}>
+                                        <Log Parent={null} Logo={null}/>
+                                    </div> : null
+                                }
                             </div>
-                            {(wapp.globals.DEV) ?
-                                <div className={style.log}>
-                                    <Log Parent={null} Logo={null } />
-                                </div> : null
-                            }
-                        </div>
-                    </footer>
+                        </footer>
+                        :
+                        null
+                    }
                 </main>
             </div>
         </div>
