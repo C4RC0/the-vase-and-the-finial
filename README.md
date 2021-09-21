@@ -55,3 +55,12 @@ Overall, code art contrasts itself with generative art and uses the code as a to
 ## About me
 
 You can read more about me on my [Github](https://github.com/C4RC0).
+
+## Previews
+
+![Default](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-1920x1080.jpg)
+![Style 1](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-style1-1920x1080.jpg)
+![Style 2](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-style2-1920x1080.jpg)
+![Style 3](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-style3-1920x1080.jpg)
+![Style 4](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-style4-1920x1080.jpg)
+![Style 5](https://raw.githubusercontent.com/C4RC0/the-vase-and-the-finial/master/packages/the-vase-and-the-finial/run/public/assets/preview-style5-1920x1080.jpg)
