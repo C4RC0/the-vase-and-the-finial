@@ -231,6 +231,7 @@
     top: 10%;
     left: 52%;
     clip-path: polygon(0% 61%, 100% 63%, 100% 100%, 0% 100%);
+    animation-name: vaseTableShadow;
 }
 
 .vase .layer1 .tableShadow .part1{
@@ -278,6 +279,7 @@
     top: 5%;
     transform: scaleX(1) rotateZ(10deg);
     clip-path: polygon(0% 0%, 100% 0, 100% 62%, 0 67%);
+    animation-name: vaseWallShadow;
 }
 
 .vase .layer1 .wallShadow .part1{
@@ -836,6 +838,7 @@
     width: 100%;
     height: 100%;
     z-index: 106;
+    animation-name: vaseLights;
 }
 
 .vase .layer6 .concave{
@@ -1400,6 +1403,7 @@
     top: 11%;
     opacity: 0.9;
     clip-path: polygon(0 0, 250% 0, 100% 86%, 0% 100%);
+    animation-name: bulrushWallShadow;
 }
 
 .bulrush .layer1 .wallShadow .concave{
@@ -1682,6 +1686,7 @@
 .finial .layer1 .tableShadow{
     width: 100%;
     height: 100%;
+    animation-name: finialTableShadow;
 }
 
 .finial .layer1 .tableShadow .part1{
@@ -1701,6 +1706,7 @@
     width: 100%;
     height: 100%;
     opacity: 0.9;
+    animation-name: finialWallShadow;
 }
 
 .finial .layer1 .wallShadow .part1{
@@ -2063,4 +2069,100 @@
 
 .finial .layer3 .dodecahedron .part2 > div {
     background: radial-gradient(ellipse 81% 115px at 34% 91%, white, transparent 91%, transparent 100%);
+}
+
+
+
+@keyframes vaseTableShadow {
+    from {transform: scale(1) rotateX(
+        34deg) rotateY(
+        10deg) skew(
+        -30deg,
+        -4deg);
+        left: 52%;
+    }
+    to {
+        transform: scale(1) rotateX(
+            34deg) rotateY(
+            10deg) skew(
+            -40deg,
+            -4deg);
+        left: 79%;
+    }
+}
+
+@keyframes vaseWallShadow {
+    from {
+        transform: scaleX(1) rotateZ(10deg);
+    }
+    to {
+        transform: translateX(83px) translateY(25px) skewX(
+            -6deg) skewY(
+            9deg)
+    }
+}
+
+@keyframes bulrushWallShadow {
+    from {
+        transform: none;
+        left: 28%;
+        top: 11%;
+    }
+    to {
+        left: 69%;
+        top: 17%;
+        transform: skewX(-11deg);
+    }
+}
+
+@keyframes finialTableShadow {
+    from {
+        transform: none;
+        left: 0;
+        top: 0;
+    }
+    to {
+        transform: skewX(-14deg);
+        left: 40%;
+        top: 0;
+    }
+}
+
+@keyframes finialWallShadow {
+    from {
+        transform: none;
+        left: 0;
+        top: 0;
+    }
+    to {
+        transform: skewX(-10deg);
+        left: 30%;
+        top: 1%;
+    }
+}
+
+@keyframes vaseLights {
+    from {
+        transform: none;
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-145px) translateY(-14px) skewX(
+            -15deg) scaleX(1.3);
+        opacity: 0.6;
+    }
+}
+
+@supports not (-webkit-touch-callout: none) {
+    .canvas.animation .vase .layer1 .tableShadow,
+    .canvas.animation .vase .layer1 .wallShadow,
+    .canvas.animation .bulrush .layer1 .wallShadow,
+    .canvas.animation .finial .layer1 .tableShadow,
+    .canvas.animation .finial .layer1 .wallShadow,
+    .canvas.animation .vase .layer6 {
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+    }
 }

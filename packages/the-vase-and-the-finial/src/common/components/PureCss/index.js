@@ -36,18 +36,25 @@ export default function PureCss(props) {
 
     if (!customStyle.current) {
         customStyle.current = {};
-        customStyle.current.styles = ["", "style1", "style2", "style3", "style4", "style5"];
+        customStyle.current.styles = ["", "style1", "style2", "style4", "style5"];
         customStyle.current.i = 0;
         customStyle.current.className = customStyle.current.styles[customStyle.current.i];
+        customStyle.current.lastChange = Date.now();
     }
 
     const changeStyle = function () {
         customStyle.current.i = customStyle.current.styles[customStyle.current.i + 1] ? customStyle.current.i + 1 : 0;
         customStyle.current.className = customStyle.current.styles[customStyle.current.i];
+        customStyle.current.lastChange = Date.now();
+        clearTimeout(customStyle.current.inactiveTimeout);
+        customStyle.current.inactiveTimeout = setTimeout(function () {
+            changeStyle()
+        }, 60000)
         container.current.className = clsx(
             style.canvas,
             {[style[customStyle.current.className]] : customStyle.current.className},
-            {[style.fullscreen] : fullscreen}
+            {[style.fullscreen] : fullscreen},
+            {[style.animation] : true}
         );
     }
 
@@ -81,8 +88,14 @@ export default function PureCss(props) {
         const removeResizeListeners = addResizeListeners();
         onResize();
 
+        clearTimeout(customStyle.current.inactiveTimeout);
+        customStyle.current.inactiveTimeout = setTimeout(function () {
+            changeStyle()
+        }, 60000)
+
         return function willUnmount() {
             removeResizeListeners();
+            clearTimeout(inactiveTimeout);
         }
 
     }, []);
@@ -93,7 +106,8 @@ export default function PureCss(props) {
                 clsx(
                     style.canvas,
                     {[style[customStyle.current.className]] : customStyle.current.className},
-                    {[style.fullscreen] : fullscreen}
+                    {[style.fullscreen] : fullscreen},
+                    {[style.animation] : true}
                 )}
             ref={container}
             onClick={changeStyle}
