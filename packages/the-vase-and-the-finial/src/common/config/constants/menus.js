@@ -1,6 +1,6 @@
 const menus = {
     conceptMenu: "The concept",
-    pureCssMenu: "Pure css",
+    pureCssMenu: "Pure-css artwork",
     gitHubMenu: "GitHub",
     behanceMenu: "Behance",
     nftMenu: "NFT"

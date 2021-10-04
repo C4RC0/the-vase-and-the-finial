@@ -1,11 +1,12 @@
 import App from "./components/App";
 import routes from "./config/constants/routes";
+import titles from "./config/constants/titles";
 
 export default function setContents(p = {}) {
 
     const {wapp} = p;
 
-    function getTitle({wapp, req, res, title}) {
+    function getTitle({wapp, res, title}) {
         const config = wapp.getTargetObject().config;
         const {siteName = "Wapplr"} = config;
         const {statusCode, statusMessage, errorMessage} = res.wappResponse;
@@ -21,18 +22,16 @@ export default function setContents(p = {}) {
     wapp.contents.add({
         pureCss: {
             render: App,
-            description: "Pure css",
             renderType: "react",
             title: function (p) {
-                return getTitle({...p, title: "Pure css"})
+                return getTitle({...p, title: titles.pureCssTitle})
             }
         },
         concept: {
             render: App,
-            description: "Concept",
             renderType: "react",
             title: function (p) {
-                return getTitle({...p, title: "Concept"})
+                return getTitle({...p, title: titles.conceptTitle})
             }
         },
     });
